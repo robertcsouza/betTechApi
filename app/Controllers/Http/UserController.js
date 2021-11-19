@@ -2,11 +2,11 @@
 const User = use('App/Models/User')
 class UserController {
     async index({auth,request}){
-        const {id} = auth.user; 
-        const user = await User.query().where('id',id).with('images').fetch();
+      
+        const {id,username,email} = auth.user
   
-        return user;
-  
+        return {id,username,email};
+
       }
   
   

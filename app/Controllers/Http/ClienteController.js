@@ -9,8 +9,9 @@ class ClienteController {
 
     async index({auth,response,params}){
       
-         const clientes = await Cliente.query().with('endereco').fetch()
-        return clientes 
+        // const clientes = await Cliente.query().with('endereco').fetch()
+         const clientes = await Cliente.query().with('endereco').with('relatorio').fetch()
+         return clientes 
    }
 
 

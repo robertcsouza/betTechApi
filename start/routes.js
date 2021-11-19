@@ -27,6 +27,7 @@ Route.post('/sessions', 'SessionController.create').prefix('v1')
 //Rotas de usuario ---------------------------------------------------------
 
 Route.post('/user', 'UserController.create').prefix('v1')
+Route.get('/user', 'UserController.index').prefix('v1').middleware('auth')
 
 Route.put('/user', 'UserController.update').prefix('v1').middleware('auth')
 Route.put('/user/reset', 'UserController.reset').prefix('v1').middleware('auth')
